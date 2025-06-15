@@ -1,0 +1,13 @@
+# RKE2 Server Configuration
+token: "rke2-cluster-secure-token"
+write-kubeconfig-mode: "0644"
+tls-san:
+  - "192.168.100.235"  # Bastion IP
+  - "192.168.100.236"  # Master IP
+  - "rancher.local"
+  - "master01.local"
+node-label:
+  - "node-role.kubernetes.io/control-plane=true"
+  - "node-type=master"
+node-taint:
+  - "node-role.kubernetes.io/control-plane:NoSchedule"

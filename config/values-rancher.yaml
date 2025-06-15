@@ -1,0 +1,17 @@
+# Rancher Helm Chart Values
+hostname: rancher.local
+bootstrapPassword: "admin123"  # Change this in production!
+
+ingress:
+  tls:
+    source: rancher
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 1Gi
+  limits:
+    cpu: 2000m
+    memory: 4Gi
+
+replicas: 1

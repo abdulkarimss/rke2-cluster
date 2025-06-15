@@ -1,0 +1,18 @@
+# Longhorn Helm Chart Values
+defaultSettings:
+  defaultDataPath: /var/lib/longhorn
+  defaultReplicaCount: 2
+  backupTarget: "nfs://192.168.100.235:/nfs/backups"
+  createDefaultDiskLabeledNodes: true
+
+persistence:
+  defaultClass: true
+
+resources:
+  manager:
+    requests:
+      cpu: 200m
+      memory: 512Mi
+    limits:
+      cpu: 1000m
+      memory: 1Gi
